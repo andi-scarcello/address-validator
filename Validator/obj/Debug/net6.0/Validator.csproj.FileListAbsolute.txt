@@ -1,0 +1,17 @@
+/Users/andiscarcello/Documents/address-validator/Validator/obj/Debug/net6.0/Validator.csproj.AssemblyReference.cache
+/Users/andiscarcello/Documents/address-validator/Validator/obj/Debug/net6.0/Validator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/andiscarcello/Documents/address-validator/Validator/obj/Debug/net6.0/Validator.AssemblyInfoInputs.cache
+/Users/andiscarcello/Documents/address-validator/Validator/obj/Debug/net6.0/Validator.AssemblyInfo.cs
+/Users/andiscarcello/Documents/address-validator/Validator/obj/Debug/net6.0/Validator.csproj.CoreCompileInputs.cache
+/Users/andiscarcello/Documents/address-validator/Validator/bin/Debug/net6.0/Validator
+/Users/andiscarcello/Documents/address-validator/Validator/bin/Debug/net6.0/Validator.deps.json
+/Users/andiscarcello/Documents/address-validator/Validator/bin/Debug/net6.0/Validator.runtimeconfig.json
+/Users/andiscarcello/Documents/address-validator/Validator/bin/Debug/net6.0/Validator.dll
+/Users/andiscarcello/Documents/address-validator/Validator/bin/Debug/net6.0/Validator.pdb
+/Users/andiscarcello/Documents/address-validator/Validator/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/andiscarcello/Documents/address-validator/Validator/obj/Debug/net6.0/Validator.csproj.CopyComplete
+/Users/andiscarcello/Documents/address-validator/Validator/obj/Debug/net6.0/Validator.dll
+/Users/andiscarcello/Documents/address-validator/Validator/obj/Debug/net6.0/refint/Validator.dll
+/Users/andiscarcello/Documents/address-validator/Validator/obj/Debug/net6.0/Validator.pdb
+/Users/andiscarcello/Documents/address-validator/Validator/obj/Debug/net6.0/Validator.genruntimeconfig.cache
+/Users/andiscarcello/Documents/address-validator/Validator/obj/Debug/net6.0/ref/Validator.dll

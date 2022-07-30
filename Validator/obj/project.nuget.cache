@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "uOQt8ydEZxZO2TROUcQ1DIN81DbWjZyVPGB8OPpzJgHF7hQ+MRVEOteQFiQp7xHJRAZqLpWEGm4R/tWgmqM55A==",
+  "success": true,
+  "projectFilePath": "/Users/andiscarcello/Documents/address-validator/Validator/Validator.csproj",
+  "expectedPackageFiles": [
+    "/Users/andiscarcello/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

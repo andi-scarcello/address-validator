@@ -1,0 +1,15 @@
+/Users/andiscarcello/Documents/address-validator/AddressValidator/bin/Debug/net6.0/AddressValidator
+/Users/andiscarcello/Documents/address-validator/AddressValidator/bin/Debug/net6.0/AddressValidator.deps.json
+/Users/andiscarcello/Documents/address-validator/AddressValidator/bin/Debug/net6.0/AddressValidator.runtimeconfig.json
+/Users/andiscarcello/Documents/address-validator/AddressValidator/bin/Debug/net6.0/AddressValidator.dll
+/Users/andiscarcello/Documents/address-validator/AddressValidator/bin/Debug/net6.0/AddressValidator.pdb
+/Users/andiscarcello/Documents/address-validator/AddressValidator/obj/Debug/net6.0/AddressValidator.csproj.AssemblyReference.cache
+/Users/andiscarcello/Documents/address-validator/AddressValidator/obj/Debug/net6.0/AddressValidator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/andiscarcello/Documents/address-validator/AddressValidator/obj/Debug/net6.0/AddressValidator.AssemblyInfoInputs.cache
+/Users/andiscarcello/Documents/address-validator/AddressValidator/obj/Debug/net6.0/AddressValidator.AssemblyInfo.cs
+/Users/andiscarcello/Documents/address-validator/AddressValidator/obj/Debug/net6.0/AddressValidator.csproj.CoreCompileInputs.cache
+/Users/andiscarcello/Documents/address-validator/AddressValidator/obj/Debug/net6.0/AddressValidator.dll
+/Users/andiscarcello/Documents/address-validator/AddressValidator/obj/Debug/net6.0/refint/AddressValidator.dll
+/Users/andiscarcello/Documents/address-validator/AddressValidator/obj/Debug/net6.0/AddressValidator.pdb
+/Users/andiscarcello/Documents/address-validator/AddressValidator/obj/Debug/net6.0/AddressValidator.genruntimeconfig.cache
+/Users/andiscarcello/Documents/address-validator/AddressValidator/obj/Debug/net6.0/ref/AddressValidator.dll
