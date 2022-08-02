@@ -1,3 +1,3 @@
 public interface IValidator {
-    public string Validate(string itemToValidate);
+    public List<string> ValidateFromCsv(string filePath);
 }
