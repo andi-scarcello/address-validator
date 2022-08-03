@@ -21,7 +21,8 @@ A new key can be obtained by signing up for a free trial here: https://www.addre
 3. In a terminal, navigate to address-validator/Validator. Type `dotnet run [Path to your csv file]` and hit enter.  </br>
 For example: `dotnet run ~/Documents/addresses.csv`
 
-4. The output will include the original address and either the corrected address, "Invalid Address", or another status output by the Address-Validator API. For example:
+4. The output will include the original address and either the corrected address, "Invalid Address", or another status output by the Address-Validator API. </br>
+For example:
 ```
 6601 Tennyson St NE, Albuquerque, 87111 -> 6601 Tennyson St NE,Albuquerque NM 87111-8161
 123 e Maine Street, Columbus, 43215 -> returned status SUSPECT; diagnostics: ward mult
