@@ -2,17 +2,12 @@
 
 ## Run the code
 
-1. Create a CSV file containing fields `Street Address`, `City`, and `Postal Code`. </br>
-For example:
+1. Create a CSV file containing fields `Street Address`, `City`, and `Postal Code`, such as shown below. A fourth field `Country Code` can optionally be entered, as well; otherwise, the program will assume the address is in the US. Note that the program expects the header fields to occur in the first line of the file, but the fields can occur in any order. </br>
 ```
 Street Address, City, Postal Code
 123 e Maine Street, Columbus, 43215
 1 Empora St, Title, 11111
 ```
-
-    A fourth field `Country Code` can optionally be entered, as well; otherwise, the program will assume the address is in the US. 
-
-    Note that the program expects the header fields to occur in the first line of the file, but the fields can occur in any order.
 
 2. Update the API key on line 5 of `AddressValidatorService.cs`. </br>
 A new key can be obtained by signing up for a free trial here: https://www.address-validator.net/free-trial-registration.html
@@ -32,12 +27,11 @@ Navigate to `ValidateFromCsvTests.cs`. Right click the `[TestClass]` attribute o
 
 * Some of the tests use `MockAddressValidatorService` to validate the program is correctly parsing the CSV input and formatting requests sent to the Address-Validator Online API without exhausting the 100 checks allowed with the free trial; the mock service simply returns a serialized version of the `ValidatorRequest` it receives, which the test methods then deserialize and verify the format of. 
 
-* When testing locally with CSV files I created, I noticed the file content would sometimes be surrounding with additional quotations, such as: 
+* When testing locally with CSV files I created, I noticed the file content would sometimes be surrounding with additional quotations, such as shown below. Thus, the `AddressValidator` strips any quotes and backslashes from content before sending it to the `AddressValidatorService`.
 ```
 "\"Street Address, City, Postal Code
 6601 Tennyson St NE, Albuquerque, 87111\""
 ``` 
-Thus, the `AddressValidator` strips any quotes and backslashes from content before sending it to the `AddressValidatorService`.
 
 * I tried to name variables and methods well enough to reduce the need for comments.
 
