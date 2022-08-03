@@ -24,7 +24,7 @@ For example: `dotnet run ~/Documents/addresses.csv`
 4. The output will include the original address and either the corrected address, "Invalid Address", or another status output by the Address-Validator API. </br>
 For example:
 ```
-6601 Tennyson St NE, Albuquerque, 87111 -> 6601 Tennyson St NE,Albuquerque NM 87111-8161
+6601 Tennyson St NE, Albuquerque, 87111 -> 6601 Tennyson St NE, Albuquerque NM 87111-8161
 123 e Maine Street, Columbus, 43215 -> returned status SUSPECT; diagnostics: ward mult
 1 Empora St, Title, 11111 -> Invalid Address
 ``` 
@@ -39,9 +39,9 @@ Navigate to `ValidateFromCsvTests.cs`. Right click the `[TestClass]` attribute o
 
 * `AddressValidator` takes an implementation of `IValidatorService` in its constructor so that the project could be extended to use a different type of address validation. Everything specific to the Address-Validator Online API is in `AddressValidatorService`, which implements `IValidatorService`.
 
-* I separated the CSV parsing from the general `Validate` logic in `AddressValidator.cs` so that the `Validate` logic could be reused if the program was extended to receive addresses from a type of input other than CSV.
+* The CSV parsing is separated from the general `Validate` logic in `AddressValidator.cs` so that the `Validate` logic could be reused if the program was extended to receive addresses from a type of input other than CSV.
 
-* Some of the tests use `MockAddressValidatorService` to validate the program is correctly parsing the CSV input and formatting requests sent to the Address-Validator Online API without exhausting the 100 checks allowed with the free trial; the mock service simply returns a serialized version of the `ValidatorRequest` it receives, which the test methods then deserialize and verify the format of. 
+* Some of the tests use `MockAddressValidatorService` to validate the program is correctly parsing the CSV input and formatting requests sent to the Address-Validator Online API without exhausting the 100 checks allowed with the free trial. The mock service simply returns a serialized version of the `ValidatorRequest` it receives, which the test methods then deserialize and verify the format of. 
 
 * When testing locally with CSV files I created, I noticed the file content would sometimes be surrounding with additional quotations, such as shown below. Thus, the `AddressValidator` strips any quotes and backslashes from content before sending it to the `AddressValidatorService`.
 ```
