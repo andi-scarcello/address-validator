@@ -1,9 +1,9 @@
 public class ValidatorRequest
 {
-    public ValidatorRequest(string item, List<KeyValuePair<string, string>> content)
+    public ValidatorRequest(string itemToValidate, List<KeyValuePair<string, string>> requestContent)
     {
-        ItemToValidate = item;
-        RequestContent = content;
+        ItemToValidate = itemToValidate;
+        RequestContent = requestContent;
     }
 
     public List<KeyValuePair<string, string>> RequestContent { get; set; }    

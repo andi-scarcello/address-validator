@@ -63,6 +63,7 @@ public class ValidateFromCsvTests
 
     [DataTestMethod]
     [DataRow(new string[] { "\"Street Address, City, Postal Code\"", "\"6601 Tennyson St NE, Albuquerque, 87111\"" })]
+    [DataRow(new string[] { "\"Street Address, City, Postal Code", "6601 Tennyson St NE, Albuquerque, 87111\"" })]
     public void ValidatorRequest_IsFormattedCorrectly_WhenAddressSurroundedByQuotes(string[] fileContent)
     {
         // Set up
@@ -128,7 +129,20 @@ public class ValidateFromCsvTests
         var results = _addressValidator.ValidateFromCsv(file);
 
         // Validate results
-        Assert.AreEqual($"{fileContent[1]} -> 6601 Tennyson St NE,Albuquerque NM 87111-8161", results.Single());
+        Assert.AreEqual($"{fileContent[1]} -> returned status SUSPECT; diagnostics: ward mult", results.Single());
+
+        // Clean up
+        File.Delete(file);
+    }
+
+    [TestMethod]
+    public void Validate_ThrowsException_WhenFileEmpty()
+    {
+        // Set up
+        var file = CreateFile(new string[0]); 
+
+        // Execute and validate
+        Assert.ThrowsException<Exception>(() => _addressValidator.ValidateFromCsv(file));
 
         // Clean up
         File.Delete(file);
@@ -136,7 +150,7 @@ public class ValidateFromCsvTests
 
 
     [DataTestMethod]
-    [DataRow("/Users/andiscarcello/Documents/address-validator/AddressValidatorTests/Addresses.csv")]
+    [DataRow("/Users/andiscarcello/Documents/address-validator/Tests/Addresses.csv")]
     public void Validate_FromActualFile_ReturnsListOfResponses(string filePath)
     {
          // Execute
@@ -144,9 +158,9 @@ public class ValidateFromCsvTests
 
         // Validate results
         Assert.AreEqual("6601 Tennyson St NE, Albuquerque, 87111 -> 6601 Tennyson St NE,Albuquerque NM 87111-8161", results[0]);
-        Assert.AreEqual("4203 239th PL SE,Issaquah,98029 -> 4203 239th Pl SE,Sammamish WA 98029-7536", results[1]);
-        Assert.AreEqual("123 e Maine Street,Columbus,43215 -> returned status SUSPECT; diagnostics: ward mult", results[2]);
-        Assert.AreEqual("1 Empora St,Title,11111 -> Invalid Address", results[3]);
+        Assert.AreEqual("4203 239th PL SE, Issaquah, 98029 -> 4203 239th Pl SE,Sammamish WA 98029-7536", results[1]);
+        Assert.AreEqual("123 e Maine Street, Columbus, 43215 -> returned status SUSPECT; diagnostics: ward mult", results[2]);
+        Assert.AreEqual("1 Empora St, Title, 11111 -> Invalid Address", results[3]);
     }
 
     private string CreateFile(string[] content)
