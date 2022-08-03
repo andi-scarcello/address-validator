@@ -112,7 +112,7 @@ public class ValidateFromCsvTests
         var results = _addressValidator.ValidateFromCsv(file);
 
         // Validate results
-        Assert.AreEqual($"{fileContent[1]} -> 6601 Tennyson St NE,Albuquerque NM 87111-8161", results.Single());
+        Assert.AreEqual($"{fileContent[1]} -> 6601 Tennyson St NE, Albuquerque NM 87111-8161", results.Single());
 
         // Clean up
         File.Delete(file);
@@ -157,10 +157,10 @@ public class ValidateFromCsvTests
         var results = _addressValidator.ValidateFromCsv(filePath);
 
         // Validate results
-        Assert.AreEqual("6601 Tennyson St NE, Albuquerque, 87111 -> 6601 Tennyson St NE,Albuquerque NM 87111-8161", results[0]);
-        Assert.AreEqual("4203 239th PL SE, Issaquah, 98029 -> 4203 239th Pl SE,Sammamish WA 98029-7536", results[1]);
-        Assert.AreEqual("123 e Maine Street, Columbus, 43215 -> returned status SUSPECT; diagnostics: ward mult", results[2]);
-        Assert.AreEqual("1 Empora St, Title, 11111 -> Invalid Address", results[3]);
+        Assert.AreEqual("6601 Tennyson St NE, Albuquerque, 87111 -> 6601 Tennyson St NE, Albuquerque NM 87111-8161", results[0]);
+        Assert.AreEqual("4203 239th PL SE,Issaquah,98029 -> 4203 239th Pl SE, Sammamish WA 98029-7536", results[1]);
+        Assert.AreEqual("123 e Maine Street,Columbus,43215 -> returned status SUSPECT; diagnostics: ward mult", results[2]);
+        Assert.AreEqual("1 Empora St,Title,11111 -> Invalid Address", results[3]);
     }
 
     private string CreateFile(string[] content)

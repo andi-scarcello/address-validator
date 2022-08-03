@@ -38,26 +38,19 @@ public class AddressValidator : IValidator
 
     private string Validate(string itemToValidate)
     {
+        var requestContent = FormatRequestContent(itemToValidate);
+        return _validatorService.Validate(new ValidatorRequest(itemToValidate, requestContent)); 
+    }
+
+    private List<KeyValuePair<string, string>> FormatRequestContent(string itemToValidate)
+    {
         var addressComponents = itemToValidate.Split(',');
         for (int i = 0; i < addressComponents.Length; i++)
         {
             // Depending on how the item was created, it may contain escaped quotes around values; remove these to avoid any issues down stream
             addressComponents[i] = addressComponents[i].Replace("\"", String.Empty).TrimStart();
-        }
-
-        var postData = FormatRequestContent(addressComponents);
-
-        // Ensure entered item will print with spaces between each component regardless of whether it was submitted that way 
-        var formattedItemtoValidate = string.Join(", ", addressComponents);
-        
-        return _validatorService.Validate(new ValidatorRequest(formattedItemtoValidate, postData)); 
-    }
-
-    private List<KeyValuePair<string, string>> FormatRequestContent(string[] addressComponents)
-    {
-        for (int i = 0; i < _addressComponentNames.Length; i++)
-        {
             _addressComponentNames[i] = _addressComponentNames[i].Replace("\"", String.Empty).Replace(" ", String.Empty);
+
         }
 
         var requestContent = new List<KeyValuePair<string, string>>();
